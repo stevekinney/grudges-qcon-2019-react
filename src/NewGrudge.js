@@ -1,13 +1,16 @@
 import React from 'react';
+import { GrudgeContext } from './GrudgeContext';
 
-const NewGrudge = ({ onSubmit }) => {
+const NewGrudge = () => {
+  const { addGrudge } = React.useContext(GrudgeContext);
+
   const [person, setPerson] = React.useState('');
   const [reason, setReason] = React.useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
     const grudge = { person, reason };
-    onSubmit(grudge);
+    addGrudge(grudge);
   };
 
   return (
