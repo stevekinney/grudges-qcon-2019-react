@@ -27,8 +27,8 @@ const Application = () => {
 
   return (
     <div className="Application">
-      <NewGrudge addGrudge={addGrudge} />
-      <Grudges grudges={grudges} />
+      <NewGrudge onSubmit={addGrudge} />
+      <Grudges grudges={grudges} onForgive={toggleForgiveness} />
     </div>
   );
 };
